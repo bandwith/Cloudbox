@@ -2,14 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ubuntu:latest
+      - image: ubuntu:16.04
     steps:
-      - run: sudo apt-get install software-properties-common
-      - run: sudo apt-add-repository ppa:ansible/ansible -y
-      - run: sudo add-apt-repository ppa:git-core/ppa -y
-      - run: sudo apt-get update
-      - run: sudo apt-get dist-upgrade -y
-      - run: sudo apt-get install ansible git
+      - run: apt-get update
+      - run: apt-get install software-properties-common
+      - run: apt-add-repository ppa:ansible/ansible -y
+      - run: add-apt-repository ppa:git-core/ppa -y
+      - run: apt-get update
+      - run: apt-get upgrade -y
+      - run: apt-get install ansible git
       - checkout
       - run:
           name: "run ansible-playbook for continuous integration"
