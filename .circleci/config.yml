@@ -5,7 +5,7 @@ jobs:
       - image: ubuntu:16.04
     steps:
       - run: apt-get update
-      - run: apt-get install software-properties-common
+      - run: apt-get install software-properties-common python-software-properties python3-software-properties -y
       - run: apt-add-repository ppa:ansible/ansible -y
       - run: add-apt-repository ppa:git-core/ppa -y
       - run: apt-get update
