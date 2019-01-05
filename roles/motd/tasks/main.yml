@@ -88,8 +88,9 @@
     force: yes
     follow: no
 
-- stat:
-  path: "/etc/ssh/sshd_config"
+- name: SSHd config
+  stat:
+    path: "/etc/ssh/sshd_config"
   register: sshd_config
 
 - name: Set PrintLastLog to no
