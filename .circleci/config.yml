@@ -1,8 +1,8 @@
 version: 2
 jobs:
   build:
-    machine: 
-      image: circleci/classic:201808-01
+    docker:
+      - image: ubuntu:latest
     steps:
       - run: sudo apt-get install software-properties-common
       - run: sudo apt-add-repository ppa:ansible/ansible -y
