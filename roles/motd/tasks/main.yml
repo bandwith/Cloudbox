@@ -88,9 +88,14 @@
     force: yes
     follow: no
 
+- stat:
+  path: "/etc/ssh/sshd_config"
+  register: sshd_config
+
 - name: Set PrintLastLog to no
   lineinfile:
     path: "/etc/ssh/sshd_config"
     regexp: '^PrintLastLog\s?'
     line: 'PrintLastLog no'
     state: present
+  when: sshd_config.stat.exists
