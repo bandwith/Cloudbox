@@ -4,10 +4,10 @@ jobs:
     machine: true
     steps:
       - checkout
-      - sudo apt-get install software-properties-common
-      - sudo apt-add-repository ppa:ansible/ansible -y
-      - sudo apt-get update
-      - sudo apt-get install ansible -y
+      - run: sudo apt-get install software-properties-common
+      - run: sudo apt-add-repository ppa:ansible/ansible -y
+      - run: sudo apt-get update
+      - run: sudo apt-get install ansible -y
       - run:
           name: "run ansible-playbook for continuous integration"
           command: sudo ansible-playbook cloudbox.yml --tags "cloudbox" --skip-tags "settings" --extra-vars '{"continuous_integration":true}'
