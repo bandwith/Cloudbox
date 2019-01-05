@@ -14,4 +14,4 @@ jobs:
       - checkout
       - run:
           name: "run ansible-playbook for continuous integration"
-          command: sudo ansible-playbook cloudbox.yml --tags "cloudbox" --skip-tags "settings,kernel" --extra-vars '{"continuous_integration":true}'
+          command: sudo ansible-playbook cloudbox.yml --tags "cloudbox" --skip-tags "settings,kernel,system" --extra-vars '{"continuous_integration":true}'
