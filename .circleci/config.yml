@@ -10,4 +10,4 @@ jobs:
       - run: sudo apt-get install ansible -y
       - run:
           name: "run ansible-playbook for continuous integration"
-          command: sudo ansible-playbook cloudbox.yml -b --tags "cloudbox" --skip-tags "settings" --extra-vars '{"continuous_integration":true}'
+          command: sudo ansible-playbook cloudbox.yml --tags "cloudbox" --skip-tags "settings" --extra-vars '{"continuous_integration":true}'
