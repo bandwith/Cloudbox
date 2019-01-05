@@ -10,7 +10,7 @@ jobs:
       - run: add-apt-repository ppa:git-core/ppa -y
       - run: apt-get update
       - run: apt-get upgrade -y
-      - run: apt-get install ansible git -y
+      - run: apt-get install ansible git sudo -y
       - checkout
       - run:
           name: "run ansible-playbook for continuous integration"
